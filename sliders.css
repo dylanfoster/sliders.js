@@ -28,8 +28,10 @@ bottom: 0;
 height: 100%;
 }
 
-.sliders > figure  img{
-    width: 100%;
+.sliders > figure img {
+max-width: 100%;
+height: auto;
+z-index: 1;
 }
 
 .sliders > figure > figcaption{
@@ -81,6 +83,7 @@ position: absolute;
 left: 50%;
 margin-left: -150px;
 bottom: 15px;
+z-index: 3;
 }
 
 li.page {

@@ -1,8 +1,8 @@
 {
 	"name": "sliders.js",
 	"title": "sliders.js",
-	"version": "1.0.5",
-	"description": "sliders.js is a tiny jQuery slideshow plugin.",
+	"version": "1.0.6",
+	"description": "sliders.js is a tiny, responsive jQuery slideshow plugin.",
 	"keywords": [
 		"slider",
 		"slideshow",
