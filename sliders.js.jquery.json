@@ -8,7 +8,8 @@
 		"slideshow",
 		"jquery",
 		"slides",
-		"carousel"
+		"carousel",
+		"sliders"
 	],
 	"author": {
 		"name": "Dylan Foster",
