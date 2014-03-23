@@ -1,7 +1,7 @@
 {
 	"name": "sliders.js",
 	"title": "sliders.js",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "sliders.js is a tiny jQuery slideshow plugin.",
 	"keywords": [
 		"slider",
@@ -24,7 +24,7 @@
 	],
 	"bugs": "https://github.com/dylan947/sliders.js/issues",
 	"homepage": "http://www.dylan-foster.com/sliders",
-	"docs": "http://www.dylan-foster.com/sliders/#docs",
+	"docs": "http://www.dylan-foster.com/sliders#docs",
 	"download": "https://github.com/dylan947/sliders.js",
 	"dependencies": {
 		"jquery": ">=1.6"
