@@ -30,7 +30,7 @@ var methods = {
       function waitForNext(){
         slideTimer = setTimeout(function(){
             changeSlides('next');
-        }, settings.timeout);
+        }, settings.timeout, settings.easing);
      };
      function animateSlides(activeNdx, newNdx){
           function cleanUp(){
@@ -85,7 +85,7 @@ var methods = {
           }
         }else{
              
-          img.eq(activeNdx).stop().animate({'opacity' : 0}, settings.speed,
+          img.eq(activeNdx).stop().animate({'opacity' : 0}, settings.speed, settings.easing,
               function(){
                   cleanUp();
               });
