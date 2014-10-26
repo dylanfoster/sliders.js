@@ -22,7 +22,7 @@ gulp.task("build", function(){
   .pipe(gulp.dest("./build"));
 
   gulp.src(js)
-  .pipe(uglify())
+  .pipe(uglify({ mangle: false }))
   .pipe(rename(function(file){
     file.basename += ".min";
     file.ext = ".js";
