@@ -1,7 +1,7 @@
 sliders.js
 ==========
 
-sliders.js is a tiny jQuery slideshow plugin. 
+sliders.js is a tiny jQuery slideshow plugin.
 
 ##1. Setup
 
@@ -23,10 +23,10 @@ Include the latest jQuery Library as well as sliders.js just before your closing
    Your captions
   </figcaption>
   </figure>
-  <div class="page" data-target="next"></div> <!--uses data-target to move through slides-->
-  <div class="page" data-target="prev"></div>
+  <div class="page" id="arrow_right" data-target="next"></div> <!--uses data-target to move through slides-->
+  <div class="page" id="arrow_left" data-target="prev"></div>
   <ul class="pager"></ul> <!--optional but necessary for pager bullets-->
-  
+
 </div>
 ```
 ##3. CSS
@@ -79,7 +79,7 @@ $('.slideshow').sliders({
 For a more in depth view, see the example
 http://www.dylan-foster.com/sliders
 
-##Credits 
+##Credits
 [jQuery](http://api.jquery.com/)<br>
 
 ##Contact
