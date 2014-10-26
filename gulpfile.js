@@ -10,7 +10,7 @@ var rename = require("gulp-rename");
 var css = ["./src/**/*.css"];
 var js = ["./src/**/*.js"];
 
-gulp.task("default", ["lint", "build"]);
+gulp.task("default", ["lint", "build", "copy"]);
 
 gulp.task("build", function(){
   gulp.src(css)
@@ -28,6 +28,11 @@ gulp.task("build", function(){
     file.ext = ".js";
   }))
   .pipe(gulp.dest("./build"));
+});
+
+gulp.task("copy", function(){
+  gulp.src("./src/img/*", { base: "./src/img"})
+  .pipe(gulp.dest("./build/img"));
 });
 
 gulp.task("lint", function(){
