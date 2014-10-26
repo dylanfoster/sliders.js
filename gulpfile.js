@@ -17,7 +17,7 @@ gulp.task("build", function(){
   .pipe(minifyCSS())
   .pipe(rename(function(file){
     file.basename += ".min";
-    file.ext =".css";
+    file.ext = ".css";
   }))
   .pipe(gulp.dest("./build"));
 
@@ -28,4 +28,14 @@ gulp.task("build", function(){
     file.ext = ".js";
   }))
   .pipe(gulp.dest("./build"));
+});
+
+gulp.task("lint", function(){
+  gulp.src([].concat(js, "./gulpfile.js"))
+  .pipe(eslint())
+  .pipe(eslint.format("stylish", console.error));
+
+  gulp.src(["./package.json", "./sliders.js.jquery.json"])
+  .pipe(jsonlint())
+  .pipe(jsonlint.reporter("stylish", console.error));
 });
