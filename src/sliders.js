@@ -47,7 +47,7 @@
             return false;
           }
           fading = true;
-          if ($pager) {
+          if ($pager.length) {
             $page.removeClass("active").eq(newSlide).addClass("active");
           }
           img.eq(activeNdx).css("z-index", 3);
