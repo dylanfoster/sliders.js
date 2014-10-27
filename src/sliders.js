@@ -16,19 +16,34 @@
           ],
           easing: "jswing"
         };
+
         if (options) {
           $.extend(settings, options, easing);
 
         }
+
         this.settings = settings;
-        var $cont = $(this),
-          img = $cont.children("figure"),
-          count = img.length,
-          fading = false,
-          slideTimer,
-          activeSlide,
-          newSlide,
+        var $page, $pager;
+        var $cont = $(this);
+        var img = $cont.children("figure");
+        var count = img.length;
+        var fading = false;
+        var slideTimer;
+        var activeSlide;
+        var newSlide;
+
+        if (settings.bullets) {
           $pager = $cont.find(".pager");
+
+          for (var i = 0; i < count; i++) {
+            $pager.append("<li class=\"page\" id=" + i + ">" + i + "</li>");
+            $("li#" + i).attr("data-target", i);
+          }
+
+          $page = $pager.children(".page");
+          $page.eq(0).addClass("active");
+
+        }
 
         function waitForNext() {
           slideTimer = setTimeout(function () {
@@ -43,13 +58,17 @@
             fading = false;
             waitForNext();
           }
+
           if (fading || activeNdx === newNdx) {
             return false;
           }
+
           fading = true;
+
           if ($pager.length) {
             $page.removeClass("active").eq(newSlide).addClass("active");
           }
+
           img.eq(activeNdx).css("z-index", 3);
           img.eq(newNdx).css({
             "z-index": 2,
@@ -129,31 +148,21 @@
           animateSlides(activeSlide, newSlide);
         }
 
-        if (settings.bullets) {
-          var $pager = $cont.find(".pager");
-
-          for (var i = 0; i < count; i++) {
-            $pager.append("<li class=\"page\" data-target=\"" + i + ">" + i + "</li");
-          }
-          var $page = $pager.children(".page");
-          $page.eq(0).addClass("active");
-
-        }
         img.eq(0).css({
           "opacity": 1
         });
+
         activeSlide = 0;
 
         if (settings.auto) {
-
           waitForNext();
         }
+
         $cont.find(".page").bind("click", function () {
           var target = $(this).attr("data-target");
           clearTimeout(slideTimer);
           changeSlides(target);
         });
-
       });
     }
   };
