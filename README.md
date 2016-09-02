@@ -10,7 +10,7 @@ Include the latest jQuery Library as well as sliders.js just before your closing
 ```html
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="/js/sliders.min.js"></script>
-<script src="/js/sliders.min.css"></script>
+<link rel="stylesheet" href="/css/sliders.min.css">
 ```
 
 ##2. HTML Markup
